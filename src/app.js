@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const weather = require('./utils/weather')
 
 const app = express()
+const port = process.env.port || 3000
 
 //COnfiguracion de express paths
 const publicPath = path.join(__dirname, '../public')
@@ -87,8 +88,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('El servidor esta activo en el puerto 3000')
+app.listen(port, () => {
+    console.log('El servidor esta activo en el puerto ' + port)
 })
 
-//ver video 08-03
+//Ver Video 09-05

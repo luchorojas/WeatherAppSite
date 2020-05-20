@@ -9,7 +9,7 @@ weatherForm.addEventListener('submit', (e) => {
     clima.textContent = 'Buscando...'
     error.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + ciudad).then((response) => {
+    fetch('/weather?address=' + ciudad).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 clima.textContent = ''
@@ -21,5 +21,3 @@ weatherForm.addEventListener('submit', (e) => {
         })
     })
 })
-
-//Ver Video 09-05
