@@ -55,21 +55,13 @@ app.get('/weather', (req,res) => {
                 error: error
             })
         }
-        weather(latitud, longitud, (error, dataWeather) => {
+        weather(latitud, longitud, (error, {temp, humidity, description, icon, pressure, wind}) => {
             if (error) {
                 return res.send({error})
             }
-            res.send({
-                localizacion,
-                clima: dataWeather
-            })
+            res.send({localizacion, temp, humidity, description, icon, pressure, wind})
         })
     })
-
-    // res.send({
-    //     localizacion: req.query.address,
-    //     clima: '25 grados celcius'
-    // })
 })
 
 app.get('/help/*', (req, res) => {
