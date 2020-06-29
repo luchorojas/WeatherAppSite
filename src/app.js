@@ -29,7 +29,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'Somos una empresa con buena gente',
+        title: 'Primera app creada',
         name: 'Lucho'
     })
 })

@@ -1,8 +1,7 @@
 const fetch = require('node-fetch')
 
 const geocode = (direccion, callbackmap) => {
-    const keymap = 'pk.eyJ1Ijoicm9qYXNsdWNpYW5vIiwiYSI6ImNrOWxwaXJjMTAxcmIzaG9hZjU1b2hidmIifQ.iwR5KkqAMFNjE0C6Q7F3Eg'
-    const urlmap = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(direccion) +'.json?access_token='+keymap+'&limit=1'
+    const urlmap = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(direccion) +'.json?access_token='+process.env.GEOCODE_KEY+'&limit=1'
     fetch(urlmap)
     .then(res => res.json())
     .then(json => {

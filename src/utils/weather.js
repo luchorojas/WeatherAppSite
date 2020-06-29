@@ -1,7 +1,6 @@
 const fetch = require('node-fetch')
 
 const weather = (latitud, logitud, callbackweather) => {
-    // const keyweather = '38356e7fe344c0c37eb26b6235e2d00d'
     const urlweather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitud + '&lon=' + logitud + '&appid=' + process.env.WEATHER_KEY + '&lang=es'
 
     fetch(urlweather)
